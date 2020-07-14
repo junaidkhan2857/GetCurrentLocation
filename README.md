@@ -111,7 +111,7 @@ The parameters are as follows:
 
 
     GetCurrentLocation.initFusedProvider(YourActivityName.this);
-    GetCurrentLocation.getCurrentLocation(YOUR_CONTEXT_HERE..this, YOUR_ACTIVITY_NAME_HERE.this, NUM_OF_UPDATES, SET_INTERVAL, SET_FASTEST_INTERVAL, locationCallback);
+    GetCurrentLocation.getCurrentLocation(YOUR_CONTEXT_HERE.this, YOUR_ACTIVITY_NAME_HERE.this, NUM_OF_UPDATES, SET_INTERVAL, SET_FASTEST_INTERVAL, locationCallback);
 
 
 Set NUM_OF_UPDATES = 0 if you want to get undefined updates of the location.
