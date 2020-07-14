@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/junaidkhan2857/GetCurrentLocation.svg)](https://jitpack.io/#junaidkhan2857/GetCurrentLocation)
+
 By using this library, you can get the current location of the user in an easier way.
 
 USAGE: 
