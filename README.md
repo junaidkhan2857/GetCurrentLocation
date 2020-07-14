@@ -31,6 +31,7 @@ Again press sync now
 
 Step 3:
 Now you need to create a location callback so you can check get the location of the user
+
 private LocationCallback locationCallback = new LocationCallback() {
     @Override
     public void onLocationResult(LocationResult locationResult) {
@@ -98,13 +99,18 @@ Step 5:
 
 You need to type these two lines in the onCreate method.
 
+
 GetCurrentLocation.initFusedProvider(this);
 GetCurrentLocation.getCurrentLocation(this, this, 0, 1000, 1000, locationCallback);
 
 
+
 The parameters are as follows: 
+
+
 GetCurrentLocation.initFusedProvider(YourActivityName.this);
 GetCurrentLocation.getCurrentLocation(YOUR_CONTEXT_HERE..this, YOUR_ACTIVITY_NAME_HERE.this, NUM_OF_UPDATES, SET_INTERVAL, SET_FASTEST_INTERVAL, locationCallback);
+
 
 Set NUM_OF_UPDATES = 0 if you want to get undefined updates of the location.
 
