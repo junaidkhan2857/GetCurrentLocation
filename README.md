@@ -16,7 +16,7 @@ Add jitpack in your build.gradle(Project: Example)
   Add this line in your build.gradle(Module: app)
   
     dependencies {
-	        implementation 'com.github.junaidkhan2857:GetCurrentLocation:Tag'
+	        implementation 'com.github.junaidkhan2857:GetCurrentLocation:-SNAPSHOT'
 	}
   
   After that press sync now so you can download the library in your project.
