@@ -54,7 +54,7 @@ public class GetCurrentLocation extends AppCompatActivity {
         userDefinedSetFastestInterval = setFastestInterval;
         userDefinedLocationCallback = locationCallback;
 
-        if (checkPermissions()) {
+        if (checkPermissions(context)) {
 
             enableLocationSettings();
 
@@ -130,10 +130,10 @@ public class GetCurrentLocation extends AppCompatActivity {
         return LocationManagerCompat.isLocationEnabled(locationManager);
     }
 
-    public static boolean checkPermissions() {
+    public static boolean checkPermissions(Context context) {
 
-        return ActivityCompat.checkSelfPermission(userDefinedContext, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                && (ActivityCompat.checkSelfPermission(userDefinedContext, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED);
+        return ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED);
 
     }
 
