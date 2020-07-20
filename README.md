@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/junaidkhan2857/GetCurrentLocation.svg)](https://jitpack.io/#junaidkhan2857/GetCurrentLocation)
+
 By using this library, you can get the current location of the user in an easier way.
 
 USAGE: 
@@ -16,7 +18,7 @@ Add jitpack in your build.gradle(Project: Example)
   Add this line in your build.gradle(Module: app)
   
     dependencies {
-	        implementation 'com.github.junaidkhan2857:GetCurrentLocation:-SNAPSHOT'
+	        implementation 'com.github.junaidkhan2857:GetCurrentLocation:v1.0.0'
 	}
   
   After that press sync now so you can download the library in your project.
@@ -33,7 +35,7 @@ Again press sync now
 
 
 #### Step 3:
-Now you need to create a location callback so you can check get the location of the user
+Now you need to create a location callback so you can check get the location of the user. You have to implement this method before onCreate method. 
 
     private LocationCallback locationCallback = new LocationCallback() {
        @Override
