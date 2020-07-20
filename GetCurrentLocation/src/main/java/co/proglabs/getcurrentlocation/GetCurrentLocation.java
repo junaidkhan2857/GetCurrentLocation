@@ -137,7 +137,7 @@ public class GetCurrentLocation extends AppCompatActivity {
 
     }
 
-    private static void requestPermission() {
+    public static void requestPermission() {
 
         ActivityCompat.requestPermissions(userDefinedActivity,
                 new String[]{
@@ -146,8 +146,6 @@ public class GetCurrentLocation extends AppCompatActivity {
                 PERMISSION_ID);
 
     }
-
-
 
 
     public static void requestNewLocation() {
