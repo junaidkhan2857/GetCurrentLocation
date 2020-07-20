@@ -44,17 +44,20 @@ public class GetCurrentLocation extends AppCompatActivity {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(context);
     }
 
-    public static void getCurrentLocation(Context context, Activity activity, int numberOfUpdates, int setInterval, int setFastestInterval,
+    public GetCurrentLocation(Activity activity) {
+        userDefinedContext = activity.getApplicationContext();
+        userDefinedActivity = activity;
+    }
+
+    public static void getCurrentLocation(int numberOfUpdates, int setInterval, int setFastestInterval,
                                           LocationCallback locationCallback) {
 
-        userDefinedActivity = activity;
-        userDefinedContext = context;
         userDefinedNumberOfUpdates = numberOfUpdates;
         userDefinedSetInterval = setInterval;
         userDefinedSetFastestInterval = setFastestInterval;
         userDefinedLocationCallback = locationCallback;
 
-        if (checkPermissions(context)) {
+        if (checkPermissions()) {
 
             enableLocationSettings();
 
@@ -130,10 +133,10 @@ public class GetCurrentLocation extends AppCompatActivity {
         return LocationManagerCompat.isLocationEnabled(locationManager);
     }
 
-    public static boolean checkPermissions(Context context) {
+    public static boolean checkPermissions() {
 
-        return ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
-                && (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED);
+        return ActivityCompat.checkSelfPermission(userDefinedContext, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && (ActivityCompat.checkSelfPermission(userDefinedContext, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED);
 
     }
 
