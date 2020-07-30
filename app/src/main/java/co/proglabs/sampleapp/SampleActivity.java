@@ -39,8 +39,10 @@ public class SampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        GetCurrentLocation.initFusedProvider(this);
-        GetCurrentLocation.getCurrentLocation(this, this, 0, 1000, 1000, locationCallback);
+        GetCurrentLocation getCurrentLocation = new GetCurrentLocation(SampleActivity.this);
+
+        getCurrentLocation.initFusedProvider(SampleActivity.this);
+        getCurrentLocation.getCurrentLocation( 0, 1000, 1000, locationCallback);
 
 
 
