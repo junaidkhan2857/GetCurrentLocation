@@ -18,7 +18,7 @@ Add jitpack in your build.gradle(Project: Example)
   Add this line in your build.gradle(Module: app)
   
     dependencies {
-	        implementation 'com.github.junaidkhan2857:GetCurrentLocation:v1.0.0'
+	        implementation 'com.github.junaidkhan2857:GetCurrentLocation:v1.0.2'
 	}
   
   After that press sync now so you can download the library in your project.
@@ -101,19 +101,18 @@ You need to override two methods onActivityResult and onRequestPermissions like 
 
 #### Step 5:
 
-You need to type these two lines in the onCreate method.
+You need to type these three lines in the onCreate or where you want to start the location method method.
 
-
-    GetCurrentLocation.initFusedProvider(this);
-    GetCurrentLocation.getCurrentLocation(this, this, 0, 1000, 1000, locationCallback);
+    GetCurrentLocation getCurrentLocation = new GetCurrentLocation(YOUR_ACTIVITY_NAME.this);
+    
+    getCurrentLocation.initFusedProvider(YOUR_ACTIVITY_NAME.this);
+    getCurrentLocation.getCurrentLocation(0, 1000, 1000, locationCallback);
 
 
 
 The parameters are as follows: 
 
-
-    GetCurrentLocation.initFusedProvider(YourActivityName.this);
-    GetCurrentLocation.getCurrentLocation(YOUR_CONTEXT_HERE.this, YOUR_ACTIVITY_NAME_HERE.this, NUM_OF_UPDATES, SET_INTERVAL, SET_FASTEST_INTERVAL, locationCallback);
+    GetCurrentLocation.getCurrentLocation(NUM_OF_UPDATES, SET_INTERVAL, SET_FASTEST_INTERVAL, locationCallback);
 
 
 Set NUM_OF_UPDATES = 0 if you want to get undefined updates of the location.
